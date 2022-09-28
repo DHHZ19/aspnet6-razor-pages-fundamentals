@@ -1,6 +1,39 @@
-﻿@page
+﻿@page "/products/add"
 @model WiredBrainCoffeeAdmin.Pages.Products.AddProductModel
 @{
 }
 <h1>Add new product</h1>
 <hr/>
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" asp-page="AddProdcut">
+            <div class="mb-3">
+                <label asp-for="NewProdcut.Name">Name</label>
+                <input asp-for="NewProdcut.Name" class="form-control"/>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NewProdcut.ShortDescription">Short Description</label>
+                <input asp-for="NewProdcut.ShortDescription" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="NewProdcut.Description">Name</label>
+                <textarea asp-for="NewProdcut.Description" class="form-control"></textarea>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NewProdcut.Price">Price</label>
+                <input asp-for="NewProdcut.Price" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="NewProdcut.Category">Category</label>
+                <select asp-for="NewProdcut.Category" class="form-control" >
+                    <option value="Beverage">Beverage</option>
+                    <option value="Food">Food</option>
+                </select>
+            </div>
+            <button class="btn btn-success">Create</button>
+        </form>
+    </div>
+</div>
+@section RightFooter{
+    <img src="~/images/menu/beans.png" />
+}
