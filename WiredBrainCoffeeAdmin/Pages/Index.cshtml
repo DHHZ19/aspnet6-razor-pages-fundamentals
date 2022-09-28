@@ -9,7 +9,24 @@
     <hr />
     <div class="row">
         <div class="col-md-6">
-            
+            <div class="card">
+                <div class="card-header">
+                   The Basics
+                </div>
+                <div class="card-body">
+                  <p> Hello, today is @DateTime.Today.Date.ToString("MM/dd/yyyy").</p>
+                    @{
+                        var tempature = 55;
+                    }
+                    <p>The current temp is @tempature degrees.</p>
+                    @if(tempature < 60)
+                    {
+                        <p>We recommned a coat untill it warms up
+                            @(60 - tempature) degrees.
+                        </p>
+                    }
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="card">
